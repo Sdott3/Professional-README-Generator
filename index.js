@@ -32,16 +32,33 @@ const questions = [
                 return false;
             }
         }
-    }
-];
+    },
+    // Installation Instructions
 
-console.log(questions());
+    // Usage Information 
+
+    //Contribution Guidlines
+
+    // Test Instructions
+
+    // License Options
+
+    //Github Username
+
+    // Email Address
+];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions)
+    .then(function(userInput){
+        console.log(userInput)
+        writeToFile("README.md", generateMarkdown(userInput));
+    });
+};
 
 // Function call to initialize app
 init();

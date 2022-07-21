@@ -18,6 +18,20 @@ const questions = [
                 return false;
             }
         }
+    },
+    // Project Description
+    {
+        type: 'input',
+        name: 'description',
+        message: 'Please provide a description of the project (Required)',
+        validate: descriptionInput => {
+            if (descriptionInput) {
+                return true;
+            } else {
+                console.log('Please enter a project description');
+                return false;
+            }
+        }
     }
 ];
 

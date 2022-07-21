@@ -1,5 +1,5 @@
 // TODO: Include packages needed for this application
-const fs = require('inquire');
+const fs = require('inquirer');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
@@ -28,24 +28,85 @@ const questions = [
             if (descriptionInput) {
                 return true;
             } else {
-                console.log('Please enter a project description');
+                console.log('Please enter a project description!');
                 return false;
             }
         }
     },
     // Installation Instructions
-
+    {
+        type: 'input',
+        name: 'installation',
+        message: 'How is your project installed? (Required)',
+        validate: descriptionInput => {
+            if (descriptionInput) {
+                return true;
+            } else {
+                console.log('Please provide installation info!');
+                return false;
+            }
+        }
+    },
     // Usage Information 
-
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'How do you use this project? (Required)',
+        validate: descriptionInput => {
+            if (descriptionInput) {
+                return true;
+            } else {
+                console.log('Please provide information on how the project is used!');
+                return false;
+            }
+        }
+    },
     //Contribution Guidlines
-
+    {
+        type: 'input',
+        name: 'contribution',
+        message: 'Please provide  (Required)',
+        validate: contributionInput => {
+            if (contributionInput) {
+                return true;
+            } else {
+                console.log('Please provide information on how the project is used!');
+                return false;
+            }
+        }
+    },
     // Test Instructions
 
     // License Options
 
     //Github Username
-
+    {
+        type: 'input',
+        name: 'github',
+        message: 'Please enter your Github username! (Required)',
+        validate: descriptionInput => {
+            if (descriptionInput) {
+                return true;
+            } else {
+                console.log('Please provide your Github username!');
+                return false;
+            }
+        }
+    },
     // Email Address
+    {
+        type: 'input',
+        name: 'email',
+        message: 'Enter you email address (Required)',
+        validate: descriptionInput => {
+            if (descriptionInput) {
+                return true;
+            } else {
+                console.log('Please provide your email address!');
+                return false;
+            }
+        }
+    },
 ];
 
 // TODO: Create a function to write README file

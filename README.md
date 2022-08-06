@@ -1,5 +1,5 @@
 # Professional README Generator
-Github licence
+![image](https://user-images.githubusercontent.com/93238809/183228688-7a3bda14-c101-409e-b5a1-e41884b82c5b.png)
 
 ## Description
 This application was created to generate a high-quality, professional README depending on a series of questions a user answers in their command line using Node.js

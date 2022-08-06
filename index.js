@@ -76,9 +76,28 @@ const questions = [
         }
     },
     // Test Instructions
-
+    {
+        type: 'input',
+        name: 'test', 
+        message: 'What command should be run to run tests?',
+        default: 'npm test'
+    },
     // License Options
-
+    {
+        type: 'list',
+        name: 'license',
+        message: 'What kind of license should your project have?',
+        choices: ['MIT', 'GNU'],
+        default: ["MIT"],
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            } else {
+                console.log('Please choose a license!');
+                return false; 
+            }
+        }
+    },
     //Github Username
     {
         type: 'input',

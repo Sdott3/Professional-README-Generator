@@ -61,7 +61,7 @@ const questions = [
             }
         }
     },
-    //Contribution Guidlines
+    //Contribution Guidelines
     {
         type: 'input',
         name: 'contribution',
@@ -100,10 +100,9 @@ const questions = [
             } else {
                 console.log('Please choose a license!');
                 return false; 
-            }
         }
     },
-    //Github Username
+        //Github Username
     {
         type: 'input',
         name: 'github',

@@ -38,8 +38,8 @@ const questions = [
         type: 'input',
         name: 'installation',
         message: 'How is your project installed? (Required)',
-        validate: descriptionInput => {
-            if (descriptionInput) {
+        validate: instillationInput => {
+            if (instillationInput) {
                 return true;
             } else {
                 console.log('Please provide installation info!');
@@ -52,8 +52,8 @@ const questions = [
         type: 'input',
         name: 'usage',
         message: 'How do you use this project? (Required)',
-        validate: descriptionInput => {
-            if (descriptionInput) {
+        validate: usageInput => {
+            if (usageInput) {
                 return true;
             } else {
                 console.log('Please provide information on how the project is used!');
@@ -65,12 +65,12 @@ const questions = [
     {
         type: 'input',
         name: 'contribution',
-        message: 'Please provide  (Required)',
+        message: 'How can contributions be added to this project (Required)',
         validate: contributionInput => {
             if (contributionInput) {
                 return true;
             } else {
-                console.log('Please provide information on how the project is used!');
+                console.log('Please provide information on contributions added to this project is used!');
                 return false;
             }
         }
@@ -79,18 +79,23 @@ const questions = [
     {
         type: 'input',
         name: 'test', 
-        message: 'What command should be run to run tests?',
-        default: 'npm test'
+        message: 'What should be run to run tests?',
+        validate: testInput => {
+            if (testInput) {
+                return true;
+            } else {
+                console.log('Please provide information on testing your project!');
+                return false;
+        }
     },
     // License Options
     {
-        type: 'list',
+        type: 'checkbox',
         name: 'license',
-        message: 'What kind of license should your project have?',
-        choices: ['MIT', 'GNU'],
-        default: ["MIT"],
-        validate: nameInput => {
-            if (nameInput) {
+        message: 'What kind of license does your project have?',
+        choices: ['Apache', 'MIT', 'Mozilla-Public', 'GNU-General-Public', 'Common-Development-and Distribution', 'None'],
+        validate: licenseInput => {
+            if (licenseInput) {
                 return true;
             } else {
                 console.log('Please choose a license!');
@@ -103,8 +108,8 @@ const questions = [
         type: 'input',
         name: 'github',
         message: 'Please enter your Github username! (Required)',
-        validate: descriptionInput => {
-            if (descriptionInput) {
+        validate: githubInput => {
+            if (githubInput) {
                 return true;
             } else {
                 console.log('Please provide your Github username!');
@@ -117,8 +122,8 @@ const questions = [
         type: 'input',
         name: 'email',
         message: 'Enter you email address (Required)',
-        validate: descriptionInput => {
-            if (descriptionInput) {
+        validate: emailInput => {
+            if (emailInput) {
                 return true;
             } else {
                 console.log('Please provide your email address!');
@@ -135,7 +140,7 @@ function writeToFile(fileName, data) {
             throw err;
         console.log('Information transferred to README!')
     });
-};
+}; 
 
 // TODO: Create a function to initialize app
 function init() {

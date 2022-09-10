@@ -7,6 +7,7 @@ This application was created to generate a high-quality, professional README dep
 ## Table of Contents
 * Installation
 * Usage
+* Video Walkthrough
 * License
 * Contributing
 * Tests
@@ -18,8 +19,10 @@ The user should clone the repository from GitHub and download Node. This applica
 ## Usage
 Use inquirer from your command line to answer questions about your project.
 
+## Video Walkthrough
+
 ## 📝 License
-Copyright © 2022 [Shatyana Thomas](https://github.com/avneesh0612). <br />
+Copyright © 2022 [Shatyana Thomas](https://github.com/sdott3). <br />
 This project is [MIT](https://github.com/sdott/next-progress-bar/blob/main/LICENSE) licensed.
 
 ## Contributing
